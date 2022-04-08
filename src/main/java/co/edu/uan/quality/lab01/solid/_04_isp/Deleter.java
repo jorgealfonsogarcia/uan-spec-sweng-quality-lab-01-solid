@@ -25,12 +25,23 @@
 package co.edu.uan.quality.lab01.solid._04_isp;
 
 /**
+ * Interface to delete entities.
+ *
+ * @param <T> Type of entity.
  * @author dpoveda47@uan.edu.co
  * @author jogarcia05@uan.edu.co
  * @author jsiabato99@uan.edu.co
  * @author luruiz22@uan.edu.co
+ * @version 1.0
+ * @since 11
  */
 @FunctionalInterface
 public interface Deleter<T> {
+
+    /**
+     * Deletes an entity.
+     *
+     * @param entity the entity.
+     */
     void delete(T entity);
 }

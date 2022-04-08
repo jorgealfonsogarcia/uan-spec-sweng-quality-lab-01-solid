@@ -28,12 +28,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Business service for users. It can add, delete, get, list and update users.
+ *
  * @author dpoveda47@uan.edu.co
  * @author jogarcia05@uan.edu.co
  * @author jsiabato99@uan.edu.co
  * @author luruiz22@uan.edu.co
+ * @version 1.0
+ * @since 11
  */
-public class UserService implements Adder<User>, Deleter<User>, Getter<User>, Lister<User>, Updater<User> {
+public class UserService implements Adder<User>, Deleter<User>, Getter<User, Integer>, Lister<User>, Updater<User> {
 
     @Override
     public void add(User entity) {
@@ -46,15 +50,15 @@ public class UserService implements Adder<User>, Deleter<User>, Getter<User>, Li
     }
 
     @Override
-    public User get(int id) {
-        User user = new User(id, null, null);
+    public User get(Integer id) {
+        final var user = new User(id, null, null);
         System.out.println("User Found! = " + user);
         return user;
     }
 
     @Override
     public List<User> getAll() {
-        List<User> users = new ArrayList<>();
+        final var users = new ArrayList<User>();
         System.out.println("All Users Found! = " + users);
         return users;
     }

@@ -25,12 +25,25 @@
 package co.edu.uan.quality.lab01.solid._04_isp;
 
 /**
+ * Interface to retrieve entities.
+ *
+ * @param <T> Type of entity.
+ * @param <K> Type of the entity's key.
  * @author dpoveda47@uan.edu.co
  * @author jogarcia05@uan.edu.co
  * @author jsiabato99@uan.edu.co
  * @author luruiz22@uan.edu.co
+ * @version 1.0
+ * @since 11
  */
 @FunctionalInterface
-public interface Getter<T> {
-    T get(int id);
+public interface Getter<T, K> {
+
+    /**
+     * Gets one entity.
+     *
+     * @param id the entity's id.
+     * @return the entity.
+     */
+    T get(K id);
 }

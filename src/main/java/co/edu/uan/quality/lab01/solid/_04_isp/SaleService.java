@@ -29,12 +29,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Business service for sales. It can add, get, and list sales.
+ *
  * @author dpoveda47@uan.edu.co
  * @author jogarcia05@uan.edu.co
  * @author jsiabato99@uan.edu.co
  * @author luruiz22@uan.edu.co
+ * @version 1.0
+ * @since 11
  */
-public class SaleService implements Adder<Sale>, Getter<Sale>, Lister<Sale> {
+public class SaleService implements Adder<Sale>, Getter<Sale, Integer>, Lister<Sale> {
 
     @Override
     public void add(Sale entity) {
@@ -42,15 +46,15 @@ public class SaleService implements Adder<Sale>, Getter<Sale>, Lister<Sale> {
     }
 
     @Override
-    public Sale get(int id) {
-        Sale sale = new Sale(0.0D, LocalDate.now());
+    public Sale get(Integer id) {
+        final var sale = new Sale(0.0D, LocalDate.now());
         System.out.println("Sale Found! = " + sale);
         return sale;
     }
 
     @Override
     public List<Sale> getAll() {
-        List<Sale> sales = new ArrayList<>();
+        final var sales = new ArrayList<Sale>();
         System.out.println("All Sales Found! = " + sales);
         return sales;
     }

@@ -25,30 +25,57 @@
 package co.edu.uan.quality.lab01.solid._04_isp;
 
 /**
+ * User.
+ *
  * @author dpoveda47@uan.edu.co
  * @author jogarcia05@uan.edu.co
  * @author jsiabato99@uan.edu.co
  * @author luruiz22@uan.edu.co
+ * @version 1.0
+ * @since 11
  */
 public class User {
+
     private final int id;
     private final String name;
     private final String email;
 
+    /**
+     * Constructor.
+     *
+     * @param id    the id.
+     * @param name  the name.
+     * @param email the email.
+     */
     public User(int id, String name, String email) {
         this.id = id;
         this.name = name;
         this.email = email;
     }
 
+    /**
+     * Gets the id.
+     *
+     * @return the id.
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * Gets the name.
+     *
+     * @return the name.
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Gets the email.
+     *
+     * @return the email.
+     */
     public String getEmail() {
         return email;
     }

@@ -27,24 +27,45 @@ package co.edu.uan.quality.lab01.solid._04_isp;
 import java.time.LocalDate;
 
 /**
+ * Sale.
+ *
  * @author dpoveda47@uan.edu.co
  * @author jogarcia05@uan.edu.co
  * @author jsiabato99@uan.edu.co
  * @author luruiz22@uan.edu.co
+ * @version 1.0
+ * @since 11
  */
 public class Sale {
+
     private final double amount;
     private final LocalDate date;
 
+    /**
+     * Constructor.
+     *
+     * @param amount the amount.
+     * @param date   the date.
+     */
     public Sale(double amount, LocalDate date) {
         this.amount = amount;
         this.date = date;
     }
 
+    /**
+     * Gets the amount.
+     *
+     * @return the amount.
+     */
     public double getAmount() {
         return amount;
     }
 
+    /**
+     * Gets the date.
+     *
+     * @return the date.
+     */
     public LocalDate getDate() {
         return date;
     }
