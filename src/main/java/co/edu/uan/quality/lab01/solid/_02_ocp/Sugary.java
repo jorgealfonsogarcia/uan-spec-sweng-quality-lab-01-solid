@@ -25,14 +25,24 @@
 package co.edu.uan.quality.lab01.solid._02_ocp;
 
 /**
+ * Sugary drink.
+ *
  * @author dpoveda47@uan.edu.co
  * @author jogarcia05@uan.edu.co
  * @author jsiabato99@uan.edu.co
  * @author luruiz22@uan.edu.co
+ * @version 1.0
+ * @since 11
  */
-public class Sugar extends DrinkWithTaxMultiplier {
+public class Sugary extends DrinkWithTaxMultiplier {
 
-    public Sugar(String name, double price) {
-        super(name, "sugar", price, 3.3D);
+    /**
+     * Constructor. It has the type "sugary" and tax multiplier of 3.3.
+     *
+     * @param name  the name.
+     * @param price the price.
+     */
+    public Sugary(String name, double price) {
+        super(name, "sugary", price, 3.3D);
     }
 }

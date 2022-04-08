@@ -25,30 +25,57 @@
 package co.edu.uan.quality.lab01.solid._02_ocp;
 
 /**
+ * Drink. Abstract class that defines the data for all drinks.
+ *
  * @author dpoveda47@uan.edu.co
  * @author jogarcia05@uan.edu.co
  * @author jsiabato99@uan.edu.co
  * @author luruiz22@uan.edu.co
+ * @version 1.0
+ * @since 11
  */
 public abstract class Drink implements Totalizator {
+
     private final String name;
     private final String type;
     private final double price;
 
+    /**
+     * Constructor.
+     *
+     * @param name  the name.
+     * @param type  the type.
+     * @param price the price.
+     */
     public Drink(String name, String type, double price) {
         this.name = name;
         this.type = type;
         this.price = price;
     }
 
+    /**
+     * Gets the name.
+     *
+     * @return the name.
+     */
     public final String getName() {
         return name;
     }
 
+    /**
+     * Gets the type.
+     *
+     * @return the type.
+     */
     public final String getType() {
         return type;
     }
 
+    /**
+     * Gets the price.
+     *
+     * @return the price.
+     */
     public final double getPrice() {
         return price;
     }

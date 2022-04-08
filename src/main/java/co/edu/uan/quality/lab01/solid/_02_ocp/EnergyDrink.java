@@ -25,20 +25,31 @@
 package co.edu.uan.quality.lab01.solid._02_ocp;
 
 /**
+ * Energy drink.
+ *
  * @author dpoveda47@uan.edu.co
  * @author jogarcia05@uan.edu.co
  * @author jsiabato99@uan.edu.co
  * @author luruiz22@uan.edu.co
+ * @version 1.0
+ * @since 11
  */
 public class EnergyDrink extends Drink {
 
+    /**
+     * Constructor. It has the type "energy drink".
+     *
+     * @param name
+     * @param price
+     */
     public EnergyDrink(String name, double price) {
         super(name, "energy drink", price);
     }
 
     @Override
     public double getTotal() {
-        // TODO: Se mantiene la misma regla.
+        // NOTE: We assume this business rule to differentiate the price calculation, in order to be able to apply the
+        // principle meaningfully.
         return getPrice();
     }
 }

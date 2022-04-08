@@ -29,22 +29,36 @@ import java.util.List;
 import java.util.Objects;
 
 /**
+ * Invoice. It contains a collection of drinks, from which your total will be calculated.
+ *
  * @author dpoveda47@uan.edu.co
  * @author jogarcia05@uan.edu.co
  * @author jsiabato99@uan.edu.co
  * @author luruiz22@uan.edu.co
+ * @version 1.0
+ * @since 11
  */
-public class Invoice {
+public class Invoice implements Totalizator {
+
     private final List<Drink> drinks;
 
+    /**
+     * Constructor.
+     */
     public Invoice() {
         this(new ArrayList<>());
     }
 
+    /**
+     * Constructor.
+     *
+     * @param drinks the list of drinks.
+     */
     public Invoice(List<Drink> drinks) {
         this.drinks = Objects.requireNonNull(drinks);
     }
 
+    @Override
     public double getTotal() {
         return drinks.stream().mapToDouble(Totalizator::getTotal).sum();
     }

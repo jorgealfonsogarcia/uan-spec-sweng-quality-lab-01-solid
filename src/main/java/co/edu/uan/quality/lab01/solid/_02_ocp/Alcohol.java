@@ -25,13 +25,23 @@
 package co.edu.uan.quality.lab01.solid._02_ocp;
 
 /**
+ * Alcohol drink.
+ *
  * @author dpoveda47@uan.edu.co
  * @author jogarcia05@uan.edu.co
  * @author jsiabato99@uan.edu.co
  * @author luruiz22@uan.edu.co
+ * @version 1.0
+ * @since 11
  */
 public class Alcohol extends DrinkWithTaxMultiplier {
 
+    /**
+     * Constructor. It has the type "alcohol" and tax multiplier of 14.3.
+     *
+     * @param name  the name.
+     * @param price the prince.
+     */
     public Alcohol(String name, double price) {
         super(name, "alcohol", price, 14.3D);
     }

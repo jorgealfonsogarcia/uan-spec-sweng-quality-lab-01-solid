@@ -25,19 +25,37 @@
 package co.edu.uan.quality.lab01.solid._02_ocp;
 
 /**
+ * Specialization of Drinks that has tax multiplier.
+ *
  * @author dpoveda47@uan.edu.co
  * @author jogarcia05@uan.edu.co
  * @author jsiabato99@uan.edu.co
  * @author luruiz22@uan.edu.co
+ * @version 1.0
+ * @since 11
  */
 public class DrinkWithTaxMultiplier extends Drink {
+
     private final double taxMultiplier;
 
+    /**
+     * Constructor.
+     *
+     * @param name          the name.
+     * @param type          the type.
+     * @param price         the price.
+     * @param taxMultiplier the tax multiplier.
+     */
     public DrinkWithTaxMultiplier(String name, String type, double price, double taxMultiplier) {
         super(name, type, price);
         this.taxMultiplier = taxMultiplier;
     }
 
+    /**
+     * Gets the tax multiplier.
+     *
+     * @return the tax multiplier
+     */
     public final double getTaxMultiplier() {
         return taxMultiplier;
     }

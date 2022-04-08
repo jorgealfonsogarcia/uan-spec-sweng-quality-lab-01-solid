@@ -25,13 +25,23 @@
 package co.edu.uan.quality.lab01.solid._02_ocp;
 
 /**
+ * Water drink.
+ *
  * @author dpoveda47@uan.edu.co
  * @author jogarcia05@uan.edu.co
  * @author jsiabato99@uan.edu.co
  * @author luruiz22@uan.edu.co
+ * @version 1.0
+ * @since 11
  */
 public class Water extends DrinkWithTaxMultiplier {
 
+    /**
+     * Constructor. It has the type "water" and tax multiplier of 1.0.
+     *
+     * @param name  the name.
+     * @param price the price.
+     */
     public Water(String name, double price) {
         super(name, "water", price, 1.0D);
     }

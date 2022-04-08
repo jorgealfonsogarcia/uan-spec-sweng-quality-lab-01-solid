@@ -25,11 +25,21 @@
 package co.edu.uan.quality.lab01.solid._02_ocp;
 
 /**
+ * Inferface for all entities that calculates a total value.
+ *
  * @author dpoveda47@uan.edu.co
  * @author jogarcia05@uan.edu.co
  * @author jsiabato99@uan.edu.co
  * @author luruiz22@uan.edu.co
+ * @version 1.0
+ * @since 11
  */
 public interface Totalizator {
+
+    /**
+     * Gets the total value.
+     *
+     * @return the total value.
+     */
     double getTotal();
 }
