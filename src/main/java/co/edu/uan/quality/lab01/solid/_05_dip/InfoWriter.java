@@ -22,17 +22,14 @@
  * SOFTWARE.
  */
 
-package co.edu.uan.quality.lab01.solid._04_isp;
+package co.edu.uan.quality.lab01.solid._05_dip;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
- * Business service for sales. It can add, get, and list sales.
+ * New interface for write a list of entities.
  *
+ * @param <T> Type of the entity.
  * @author dpoveda47@uan.edu.co
  * @author jogarcia05@uan.edu.co
  * @author jsiabato99@uan.edu.co
@@ -40,26 +37,12 @@ import java.util.logging.Logger;
  * @version 1.0
  * @since 11
  */
-public class SaleService implements Adder<Sale>, Getter<Sale, Integer>, Lister<Sale> {
+public interface InfoWriter<T> {
 
-    private static final Logger LOGGER = Logger.getLogger(SaleService.class.getName());
-
-    @Override
-    public void add(Sale entity) {
-        LOGGER.log(Level.INFO, "Sale Added! = {0}", entity);
-    }
-
-    @Override
-    public Sale get(Integer id) {
-        final var sale = new Sale(0.0D, LocalDate.now());
-        LOGGER.log(Level.INFO, "Sale Found! = {0}", sale);
-        return sale;
-    }
-
-    @Override
-    public List<Sale> getAll() {
-        final var sales = new ArrayList<Sale>();
-        LOGGER.log(Level.INFO, "All Sales Found! = {0}", sales);
-        return sales;
-    }
+    /**
+     * Write the list of entities.
+     *
+     * @param list the list of entities.
+     */
+    void write(List<T> list);
 }

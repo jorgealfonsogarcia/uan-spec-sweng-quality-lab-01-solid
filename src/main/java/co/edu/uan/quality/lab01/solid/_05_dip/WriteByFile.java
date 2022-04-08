@@ -22,16 +22,16 @@
  * SOFTWARE.
  */
 
-package co.edu.uan.quality.lab01.solid._04_isp;
+package co.edu.uan.quality.lab01.solid._05_dip;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
+import com.google.gson.Gson;
+
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
- * Business service for sales. It can add, get, and list sales.
+ * Writes the information of posts into one file.
  *
  * @author dpoveda47@uan.edu.co
  * @author jogarcia05@uan.edu.co
@@ -40,26 +40,28 @@ import java.util.logging.Logger;
  * @version 1.0
  * @since 11
  */
-public class SaleService implements Adder<Sale>, Getter<Sale, Integer>, Lister<Sale> {
+public class WriteByFile implements InfoWriter<Post> {
 
-    private static final Logger LOGGER = Logger.getLogger(SaleService.class.getName());
+    private final String path;
+    private final Gson gson;
 
-    @Override
-    public void add(Sale entity) {
-        LOGGER.log(Level.INFO, "Sale Added! = {0}", entity);
+    /**
+     * Constructor.
+     *
+     * @param path the file's path to write.
+     * @param gson the Gson instance.
+     */
+    public WriteByFile(String path, Gson gson) {
+        this.path = path;
+        this.gson = gson;
     }
 
     @Override
-    public Sale get(Integer id) {
-        final var sale = new Sale(0.0D, LocalDate.now());
-        LOGGER.log(Level.INFO, "Sale Found! = {0}", sale);
-        return sale;
-    }
-
-    @Override
-    public List<Sale> getAll() {
-        final var sales = new ArrayList<Sale>();
-        LOGGER.log(Level.INFO, "All Sales Found! = {0}", sales);
-        return sales;
+    public void write(List<Post> list) {
+        try (final var writer = new FileWriter(path)) {
+            gson.toJson(list, writer);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -36,49 +36,100 @@ package co.edu.uan.quality.lab01.solid._05_dip;
  */
 public class Post {
 
-    private Integer useId;
+    private Integer userId;
     private Integer id;
     private Boolean completed;
     private String title;
 
+    /**
+     * Empty constructor.
+     */
     public Post() {
     }
 
-    public Post(Integer useId, Integer id, Boolean completed, String title) {
-        this.useId = useId;
+    /**
+     * Constructor.
+     *
+     * @param userId    the user id.
+     * @param id        the id.
+     * @param completed the flag that indicates if it's completed.
+     * @param title     the title.
+     */
+    public Post(Integer userId, Integer id, Boolean completed, String title) {
+        this.userId = userId;
         this.id = id;
         this.completed = completed;
         this.title = title;
     }
 
-    public Integer getUseId() {
-        return useId;
+    /**
+     * Gets the user id.
+     *
+     * @return the user id.
+     */
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUseId(Integer useId) {
-        this.useId = useId;
+    /**
+     * Sets the user id.
+     *
+     * @param userId the user id.
+     */
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
+    /**
+     * Gets the id.
+     *
+     * @return the id.
+     */
     public Integer getId() {
         return id;
     }
 
+    /**
+     * Sets the id.
+     *
+     * @param id the id.
+     */
     public void setId(Integer id) {
         this.id = id;
     }
 
+    /**
+     * Gets the completed flag.
+     *
+     * @return the completed flag.
+     */
     public Boolean getCompleted() {
         return completed;
     }
 
+    /**
+     * Sets the completed flag.
+     *
+     * @param completed the completed flag.
+     */
     public void setCompleted(Boolean completed) {
         this.completed = completed;
     }
 
+    /**
+     * Gets the title.
+     *
+     * @return the title.
+     */
     public String getTitle() {
         return title;
     }
 
+    /**
+     * Sets the title.
+     *
+     * @param title the title.
+     */
     public void setTitle(String title) {
         this.title = title;
     }

@@ -26,6 +26,8 @@ package co.edu.uan.quality.lab01.solid._04_isp;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Business service for users. It can add, delete, get, list and update users.
@@ -39,32 +41,34 @@ import java.util.List;
  */
 public class UserService implements Adder<User>, Deleter<User>, Getter<User, Integer>, Lister<User>, Updater<User> {
 
+    private static final Logger LOGGER = Logger.getLogger(UserService.class.getName());
+
     @Override
     public void add(User entity) {
-        System.out.println("User Added! = " + entity);
+        LOGGER.log(Level.INFO, "User Added! = {0}", entity);
     }
 
     @Override
     public void delete(User entity) {
-        System.out.println("User Deleted! = " + entity);
+        LOGGER.log(Level.INFO, "User Deleted! = {0}", entity);
     }
 
     @Override
     public User get(Integer id) {
         final var user = new User(id, null, null);
-        System.out.println("User Found! = " + user);
+        LOGGER.log(Level.INFO, "User Found! = {0}", user);
         return user;
     }
 
     @Override
     public List<User> getAll() {
         final var users = new ArrayList<User>();
-        System.out.println("All Users Found! = " + users);
+        LOGGER.log(Level.INFO, "All Users Found! = {0}", users);
         return users;
     }
 
     @Override
     public void update(User entity) {
-        System.out.println("User Updated! = " + entity);
+        LOGGER.log(Level.INFO, "User Updated! = {0}", entity);
     }
 }

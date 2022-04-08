@@ -27,7 +27,7 @@ package co.edu.uan.quality.lab01.solid._05_dip;
 import java.util.List;
 
 /**
- * Interface for get a list of entities.
+ * New interface for get a list of entities.
  *
  * @param <T> Type of the entity.
  * @author dpoveda47@uan.edu.co
@@ -38,6 +38,7 @@ import java.util.List;
  * @since 11
  */
 public interface InfoGetter<T> {
+
     /**
      * Gets a list of entities.
      *

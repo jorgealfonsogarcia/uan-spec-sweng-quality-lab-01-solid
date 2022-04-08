@@ -24,6 +24,9 @@
 
 package co.edu.uan.quality.lab01.solid._03_lsp;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  * Adult. All the adults are payers and they can pay.
  *
@@ -35,6 +38,8 @@ package co.edu.uan.quality.lab01.solid._03_lsp;
  * @since 11
  */
 public class Adult extends Payer {
+
+    private static final Logger LOGGER = Logger.getLogger(Adult.class.getName());
 
     /**
      * Constructor.
@@ -50,7 +55,7 @@ public class Adult extends Payer {
 
     @Override
     public void pay() {
-        System.out.printf("My ID Number is %s and I pay with the Credit Card %s%n",
-                getIdentificationNumber(), getCreditCard());
+        LOGGER.log(Level.INFO, "My ID Number is {0} and I pay with the Credit Card {1}",
+                new Object[]{getIdentificationNumber(), getCreditCard()});
     }
 }

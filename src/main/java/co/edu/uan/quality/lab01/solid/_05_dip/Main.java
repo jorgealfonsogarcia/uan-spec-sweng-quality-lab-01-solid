@@ -24,6 +24,8 @@
 
 package co.edu.uan.quality.lab01.solid._05_dip;
 
+import com.google.gson.Gson;
+
 /**
  * Main class.
  *
@@ -45,12 +47,16 @@ public class Main {
         final var origin = "posts.json";
         final var dbPath = "dbPath.json";
 
-        final var infoGetter = new InfoByFile(origin);
+        // NOTE: Each receives an instance of Gson as its dependency.
+        final var infoGetter = new InfoByFile(origin, new Gson());
+        final var infoWriter = new WriteByFile(dbPath, new Gson());
 
+        // NOTE: The monitor receives an instance of the getter as a dependency.
         final var monitor = new Monitor(infoGetter);
         monitor.show();
 
-        final var fileDB = new FileDB(dbPath, origin);
+        // NOTE: It receives an instance of each of its dependencies.
+        final var fileDB = new FileDB(infoWriter, infoGetter);
         fileDB.save();
     }
 }

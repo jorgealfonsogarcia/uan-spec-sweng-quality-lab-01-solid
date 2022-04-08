@@ -24,6 +24,8 @@
 
 package co.edu.uan.quality.lab01.solid._05_dip;
 
+import java.util.logging.Logger;
+
 /**
  * @author dpoveda47@uan.edu.co
  * @author jogarcia05@uan.edu.co
@@ -33,6 +35,8 @@ package co.edu.uan.quality.lab01.solid._05_dip;
  * @since 11
  */
 public class Monitor {
+
+    public static final Logger LOGGER = Logger.getLogger(Monitor.class.getName());
 
     private final InfoGetter<Post> infoGetter;
 
@@ -49,6 +53,6 @@ public class Monitor {
      * Shows the titles of every post.
      */
     public void show() {
-        infoGetter.get().forEach(post -> System.out.println(post.getTitle()));
+        infoGetter.get().forEach(post -> LOGGER.info(post.getTitle()));
     }
 }

@@ -24,7 +24,12 @@
 
 package co.edu.uan.quality.lab01.solid._05_dip;
 
-import java.util.ArrayList;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
 
 /**
@@ -40,19 +45,27 @@ import java.util.List;
 public class InfoByFile implements InfoGetter<Post> {
 
     private final String path;
+    private final Gson gson;
 
     /**
      * Constructor.
      *
-     * @param path the file's path.
+     * @param path the file's path to read.
+     * @param gson the Gson instance.
      */
-    public InfoByFile(String path) {
+    public InfoByFile(String path, Gson gson) {
         this.path = path;
+        this.gson = gson;
     }
 
     @Override
     public List<Post> get() {
-        // TODO: Leer los archivos
-        return new ArrayList<>();
+        try (final var reader = Files.newBufferedReader(Paths.get(path))) {
+            return gson.fromJson(reader, new TypeToken<List<Post>>() {
+            }.getType());
+        } catch (IOException e) {
+            e.printStackTrace();
+            return List.of();
+        }
     }
 }

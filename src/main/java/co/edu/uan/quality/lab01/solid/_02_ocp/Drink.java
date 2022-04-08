@@ -47,7 +47,7 @@ public abstract class Drink implements Totalizator {
      * @param type  the type.
      * @param price the price.
      */
-    public Drink(String name, String type, double price) {
+    protected Drink(String name, String type, double price) {
         this.name = name;
         this.type = type;
         this.price = price;

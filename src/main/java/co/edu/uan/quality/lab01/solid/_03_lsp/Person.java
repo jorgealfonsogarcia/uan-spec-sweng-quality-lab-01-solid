@@ -45,7 +45,7 @@ public abstract class Person {
      * @param firstName the first name.
      * @param lastName  the last name.
      */
-    public Person(String firstName, String lastName) {
+    protected Person(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }

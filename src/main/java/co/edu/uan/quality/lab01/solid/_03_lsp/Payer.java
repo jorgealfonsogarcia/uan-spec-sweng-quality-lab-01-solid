@@ -48,7 +48,7 @@ public abstract class Payer extends Person {
      * @param identificationNumber the identification number.
      * @param creditCard           the credit card.
      */
-    public Payer(String firstName, String lastName, String identificationNumber, String creditCard) {
+    protected Payer(String firstName, String lastName, String identificationNumber, String creditCard) {
         super(firstName, lastName);
         this.identificationNumber = identificationNumber;
         this.creditCard = creditCard;

@@ -24,7 +24,10 @@
 
 package co.edu.uan.quality.lab01.solid._05_dip;
 
-import java.util.List;
+import com.google.gson.Gson;
+
+import java.io.File;
+import java.io.FileWriter;
 
 /**
  * File database. Serializes and persists the information of the post's files.
@@ -38,17 +41,24 @@ import java.util.List;
  */
 public class FileDB {
 
-    private final String dbPath;
+    private final InfoWriter<Post> infoWriter;
     private final InfoGetter<Post> infoGetter;
 
-    public FileDB(String dbPath, InfoGetter<Post> infoGetter) {
-        this.dbPath = dbPath;
+    /**
+     * Constructor.
+     *
+     * @param infoWriter the info writer.
+     * @param infoGetter the info getter.
+     */
+    public FileDB(InfoWriter<Post> infoWriter, InfoGetter<Post> infoGetter) {
+        this.infoWriter = infoWriter;
         this.infoGetter = infoGetter;
     }
 
+    /**
+     * Saves the content of the getter.
+     */
     public void save() {
-        final List<Post> posts = infoGetter.get();
-        // TODO: Serializar
-        // TODO: Persiste
+        infoWriter.write(infoGetter.get());
     }
 }
