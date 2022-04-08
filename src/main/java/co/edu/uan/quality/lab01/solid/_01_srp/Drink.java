@@ -25,10 +25,14 @@
 package co.edu.uan.quality.lab01.solid._01_srp;
 
 /**
+ * Drink. Its only responsibility is keep the drink's information.
+ *
  * @author dpoveda47@uan.edu.co
  * @author jogarcia05@uan.edu.co
  * @author jsiabato99@uan.edu.co
  * @author luruiz22@uan.edu.co
+ * @version 1.0
+ * @since 11
  */
 public class Drink {
 
@@ -39,9 +43,9 @@ public class Drink {
     /**
      * Constructor.
      *
-     * @param name  el nombre.
-     * @param type  el tipo.
-     * @param price el precio.
+     * @param name  the name.
+     * @param type  the type.
+     * @param price the price.
      */
     public Drink(String name, DrinkType type, double price) {
         this.name = name;
@@ -49,14 +53,29 @@ public class Drink {
         this.price = price;
     }
 
+    /**
+     * Gets the name.
+     *
+     * @return the name.
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Gets the type.
+     *
+     * @return the type.
+     */
     public DrinkType getType() {
         return type;
     }
 
+    /**
+     * Gets the price.
+     *
+     * @return the price.
+     */
     public double getPrice() {
         return price;
     }

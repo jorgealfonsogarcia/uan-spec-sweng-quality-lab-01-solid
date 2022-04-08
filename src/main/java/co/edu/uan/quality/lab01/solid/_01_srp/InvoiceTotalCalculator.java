@@ -27,14 +27,25 @@ package co.edu.uan.quality.lab01.solid._01_srp;
 import java.util.List;
 
 /**
+ * Calculator for the total value of all the drinks of an invoice. That's its only responsibility.
+ *
  * @author dpoveda47@uan.edu.co
  * @author jogarcia05@uan.edu.co
  * @author jsiabato99@uan.edu.co
  * @author luruiz22@uan.edu.co
+ * @version 1.0
+ * @since 11
  */
 public class InvoiceTotalCalculator {
+
     private final DrinkTotalCalculator calculator = new DrinkTotalCalculator();
 
+    /**
+     * Calculates the total value of all drinks.
+     *
+     * @param drinks the list of drinks.
+     * @return the total value.
+     */
     public final double calculateTotal(final List<Drink> drinks) {
         return drinks.stream().mapToDouble(calculator::calculateTotal).sum();
     }

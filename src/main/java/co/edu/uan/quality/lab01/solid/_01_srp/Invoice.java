@@ -29,28 +29,52 @@ import java.util.List;
 import java.util.Objects;
 
 /**
+ * Invoice. Its only responsibility is to store the drinks.
+ *
  * @author dpoveda47@uan.edu.co
  * @author jogarcia05@uan.edu.co
  * @author jsiabato99@uan.edu.co
  * @author luruiz22@uan.edu.co
+ * @version 1.0
+ * @since 11
  */
 public class Invoice {
 
-    private final List<Drink> drinks;
     private final InvoiceTotalCalculator calculator = new InvoiceTotalCalculator();
 
+    private final List<Drink> drinks;
+
+    /**
+     * Constructor.
+     */
     public Invoice() {
         this(new ArrayList<>());
     }
 
+    /**
+     * Constructor.
+     *
+     * @param drinks the drinks to store.
+     */
     public Invoice(List<Drink> drinks) {
         this.drinks = Objects.requireNonNull(drinks);
     }
 
+    /**
+     * Adds a new drink to the invoice.
+     *
+     * @param drink the drink.
+     * @return as specified by {@link java.util.Collection#add(Object)}
+     */
     public boolean add(final Drink drink) {
         return drinks.add(drink);
     }
 
+    /**
+     * Calculates the total value of the invoice.
+     *
+     * @return the total value.
+     */
     public final double calculateTotal() {
         return calculator.calculateTotal(drinks);
     }

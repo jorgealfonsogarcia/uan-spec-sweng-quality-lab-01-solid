@@ -25,15 +25,29 @@
 package co.edu.uan.quality.lab01.solid._01_srp;
 
 /**
+ * Type of drinks. Its only responsibility is keep the type and tax multiplier for every drink.
+ *
  * @author dpoveda47@uan.edu.co
  * @author jogarcia05@uan.edu.co
  * @author jsiabato99@uan.edu.co
  * @author luruiz22@uan.edu.co
+ * @version 1.0
+ * @since 11
  */
 public enum DrinkType {
-    WATER(1),
-    SUGAR(3.3),
-    ALCOHOL(14.3);
+
+    /**
+     * Water. (Tax Multiplier 1.0)
+     */
+    WATER(1.0D),
+    /**
+     * Sugary. (Tax Multiplier 3.3)
+     */
+    SUGARY(3.3D),
+    /**
+     * Alcohol. (Tax Multiplier 14.3)
+     */
+    ALCOHOL(14.3D);
 
     private final double taxMultiplier;
 
@@ -41,6 +55,11 @@ public enum DrinkType {
         this.taxMultiplier = taxMultiplier;
     }
 
+    /**
+     * Gets the tax multiplier.
+     *
+     * @return the tax multiplier.
+     */
     public double getTaxMultiplier() {
         return taxMultiplier;
     }
