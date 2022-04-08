@@ -25,19 +25,31 @@
 package co.edu.uan.quality.lab01.solid._03_lsp;
 
 /**
+ * Adult. All the adults are payers and they can pay.
+ *
  * @author dpoveda47@uan.edu.co
  * @author jogarcia05@uan.edu.co
  * @author jsiabato99@uan.edu.co
  * @author luruiz22@uan.edu.co
+ * @version 1.0
+ * @since 11
  */
-public class Adult extends Person {
+public class Adult extends Payer {
 
+    /**
+     * Constructor.
+     *
+     * @param firstName            the first name.
+     * @param lastName             the last name.
+     * @param identificationNumber the identification number.
+     * @param creditCard           the credit card.
+     */
     public Adult(String firstName, String lastName, String identificationNumber, String creditCard) {
         super(firstName, lastName, identificationNumber, creditCard);
     }
 
     @Override
-    public void pay() throws PayException {
+    public void pay() {
         System.out.printf("My ID Number is %s and I pay with the Credit Card %s%n",
                 getIdentificationNumber(), getCreditCard());
     }

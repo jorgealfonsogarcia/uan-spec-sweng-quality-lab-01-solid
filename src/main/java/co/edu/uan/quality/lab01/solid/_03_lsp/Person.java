@@ -25,37 +25,47 @@
 package co.edu.uan.quality.lab01.solid._03_lsp;
 
 /**
+ * Person. Abstract class that defines all the information for every type of person.
+ *
  * @author dpoveda47@uan.edu.co
  * @author jogarcia05@uan.edu.co
  * @author jsiabato99@uan.edu.co
  * @author luruiz22@uan.edu.co
+ * @version 1.0
+ * @since 11
  */
-public abstract class Person implements Payer {
+public abstract class Person {
+
     private final String firstName;
     private final String lastName;
-    private final String identificationNumber;
-    private final String creditCard;
 
-    public Person(String firstName, String lastName, String identificationNumber, String creditCard) {
+    /**
+     * Constructor.
+     *
+     * @param firstName the first name.
+     * @param lastName  the last name.
+     */
+    public Person(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.identificationNumber = identificationNumber;
-        this.creditCard = creditCard;
     }
 
+    /**
+     * Gets the first name.
+     *
+     * @return the first name.
+     */
     public final String getFirstName() {
         return firstName;
     }
 
+    /**
+     * Gets the last name.
+     *
+     * @return the last name.
+     */
     public final String getLastName() {
         return lastName;
     }
 
-    public final String getIdentificationNumber() {
-        return identificationNumber;
-    }
-
-    public final String getCreditCard() {
-        return creditCard;
-    }
 }

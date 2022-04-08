@@ -25,27 +25,25 @@
 package co.edu.uan.quality.lab01.solid._03_lsp;
 
 /**
+ * Child. All children are persons but they can't pay.
+ *
  * @author dpoveda47@uan.edu.co
  * @author jogarcia05@uan.edu.co
  * @author jsiabato99@uan.edu.co
  * @author luruiz22@uan.edu.co
+ * @version 1.0
+ * @since 11
  */
 public class Child extends Person {
 
+    /**
+     * Constructor.
+     *
+     * @param firstName the first name.
+     * @param lastName  the last name.
+     */
     public Child(String firstName, String lastName) {
-        super(firstName, lastName, null, null);
+        super(firstName, lastName);
     }
 
-    @Override
-    public void pay() throws PayException {
-        throw new PayException("A child can't pay");
-    }
-
-    void x(Person x) {
-        try {
-            x.pay();
-        } catch (PayException e) {
-            e.printStackTrace();
-        }
-    }
 }

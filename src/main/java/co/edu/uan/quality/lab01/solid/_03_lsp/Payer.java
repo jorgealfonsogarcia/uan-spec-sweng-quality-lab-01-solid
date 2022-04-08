@@ -25,11 +25,55 @@
 package co.edu.uan.quality.lab01.solid._03_lsp;
 
 /**
+ * Specialization of person, but it's still abstract, that identifies who can have an identification number, a credit
+ * card, and can pay.
+ *
  * @author dpoveda47@uan.edu.co
  * @author jogarcia05@uan.edu.co
  * @author jsiabato99@uan.edu.co
  * @author luruiz22@uan.edu.co
+ * @version 1.0
+ * @since 11
  */
-public interface Payer {
-    void pay() throws PayException;
+public abstract class Payer extends Person {
+
+    private final String identificationNumber;
+    private final String creditCard;
+
+    /**
+     * Constructor.
+     *
+     * @param firstName            the first name.
+     * @param lastName             the last name.
+     * @param identificationNumber the identification number.
+     * @param creditCard           the credit card.
+     */
+    public Payer(String firstName, String lastName, String identificationNumber, String creditCard) {
+        super(firstName, lastName);
+        this.identificationNumber = identificationNumber;
+        this.creditCard = creditCard;
+    }
+
+    /**
+     * Applies a payment.
+     */
+    public abstract void pay();
+
+    /**
+     * Gets the identification number.
+     *
+     * @return the identification number.
+     */
+    public final String getIdentificationNumber() {
+        return identificationNumber;
+    }
+
+    /**
+     * Gets the credit card.
+     *
+     * @return the credit card.
+     */
+    public final String getCreditCard() {
+        return creditCard;
+    }
 }
