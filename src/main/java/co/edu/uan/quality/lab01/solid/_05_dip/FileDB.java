@@ -27,23 +27,27 @@ package co.edu.uan.quality.lab01.solid._05_dip;
 import java.util.List;
 
 /**
+ * File database. Serializes and persists the information of the post's files.
+ *
  * @author dpoveda47@uan.edu.co
  * @author jogarcia05@uan.edu.co
  * @author jsiabato99@uan.edu.co
  * @author luruiz22@uan.edu.co
+ * @version 1.0
+ * @since 11
  */
 public class FileDB {
-    private final String dbPath;
-    private final String origin;
 
-    public FileDB(String dbPath, String origin) {
+    private final String dbPath;
+    private final InfoGetter<Post> infoGetter;
+
+    public FileDB(String dbPath, InfoGetter<Post> infoGetter) {
         this.dbPath = dbPath;
-        this.origin = origin;
+        this.infoGetter = infoGetter;
     }
 
     public void save() {
-        final InfoByFile infoByFile = new InfoByFile(origin);
-        final List<Post> posts = infoByFile.get();
+        final List<Post> posts = infoGetter.get();
         // TODO: Serializar
         // TODO: Persiste
     }

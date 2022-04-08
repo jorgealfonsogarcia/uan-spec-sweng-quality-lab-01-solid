@@ -28,19 +28,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Gets the information of posts for one file.
+ *
  * @author dpoveda47@uan.edu.co
  * @author jogarcia05@uan.edu.co
  * @author jsiabato99@uan.edu.co
  * @author luruiz22@uan.edu.co
+ * @version 1.0
+ * @since 11
  */
-public class InfoByFile {
+public class InfoByFile implements InfoGetter<Post> {
 
     private final String path;
 
+    /**
+     * Constructor.
+     *
+     * @param path the file's path.
+     */
     public InfoByFile(String path) {
         this.path = path;
     }
 
+    @Override
     public List<Post> get() {
         // TODO: Leer los archivos
         return new ArrayList<>();

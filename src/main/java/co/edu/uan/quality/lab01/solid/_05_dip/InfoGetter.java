@@ -24,9 +24,12 @@
 
 package co.edu.uan.quality.lab01.solid._05_dip;
 
+import java.util.List;
+
 /**
- * Post.
+ * Interface for get a list of entities.
  *
+ * @param <T> Type of the entity.
  * @author dpoveda47@uan.edu.co
  * @author jogarcia05@uan.edu.co
  * @author jsiabato99@uan.edu.co
@@ -34,52 +37,11 @@ package co.edu.uan.quality.lab01.solid._05_dip;
  * @version 1.0
  * @since 11
  */
-public class Post {
-
-    private Integer useId;
-    private Integer id;
-    private Boolean completed;
-    private String title;
-
-    public Post() {
-    }
-
-    public Post(Integer useId, Integer id, Boolean completed, String title) {
-        this.useId = useId;
-        this.id = id;
-        this.completed = completed;
-        this.title = title;
-    }
-
-    public Integer getUseId() {
-        return useId;
-    }
-
-    public void setUseId(Integer useId) {
-        this.useId = useId;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Boolean getCompleted() {
-        return completed;
-    }
-
-    public void setCompleted(Boolean completed) {
-        this.completed = completed;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
+public interface InfoGetter<T> {
+    /**
+     * Gets a list of entities.
+     *
+     * @return the list of entities.
+     */
+    List<T> get();
 }

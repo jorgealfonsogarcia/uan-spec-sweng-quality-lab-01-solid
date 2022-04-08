@@ -29,15 +29,26 @@ package co.edu.uan.quality.lab01.solid._05_dip;
  * @author jogarcia05@uan.edu.co
  * @author jsiabato99@uan.edu.co
  * @author luruiz22@uan.edu.co
+ * @version 1.0
+ * @since 11
  */
 public class Monitor {
-    private final String origin;
 
-    public Monitor(String origin) {
-        this.origin = origin;
+    private final InfoGetter<Post> infoGetter;
+
+    /**
+     * Constructor.
+     *
+     * @param infoGetter the information getter for posts.
+     */
+    public Monitor(InfoGetter<Post> infoGetter) {
+        this.infoGetter = infoGetter;
     }
 
+    /**
+     * Shows the titles of every post.
+     */
     public void show() {
-        new InfoByFile(origin).get().forEach(post -> System.out.println(post.getTitle()));
+        infoGetter.get().forEach(post -> System.out.println(post.getTitle()));
     }
 }

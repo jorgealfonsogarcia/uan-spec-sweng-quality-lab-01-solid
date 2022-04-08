@@ -25,20 +25,32 @@
 package co.edu.uan.quality.lab01.solid._05_dip;
 
 /**
+ * Main class.
+ *
  * @author dpoveda47@uan.edu.co
  * @author jogarcia05@uan.edu.co
  * @author jsiabato99@uan.edu.co
  * @author luruiz22@uan.edu.co
+ * @version 1.0
+ * @since 11
  */
 public class Main {
-    public static void main(String[] args) {
-        final String origin = "posts.json";
-        final String dbPath = "dbPath.json";
 
-        final Monitor monitor = new Monitor(origin);
+    /**
+     * Executes the application.
+     *
+     * @param args the system's arguments.
+     */
+    public static void main(String[] args) {
+        final var origin = "posts.json";
+        final var dbPath = "dbPath.json";
+
+        final var infoGetter = new InfoByFile(origin);
+
+        final var monitor = new Monitor(infoGetter);
         monitor.show();
 
-        final FileDB fileDB = new FileDB(dbPath, origin);
+        final var fileDB = new FileDB(dbPath, origin);
         fileDB.save();
     }
 }
